@@ -22,17 +22,37 @@ import { Scene06_Validation, scene06Schema, scene06Defaults } from "./scenes/Sce
 import { Scene05_CommitteeHero } from "./scenes/hero/Scene05_CommitteeHero";
 import { Scene01_TitleHero } from "./scenes/hero/Scene01_TitleHero";
 import { Scene05_CommitteeTableHero } from "./scenes/hero/Scene05_CommitteeTableHero";
+import { TableAsset } from "./assets/TableAsset";
+import { Scene05_CommitteeTablePhoto } from "./scenes/hero/Scene05_CommitteeTablePhoto";
 
 const dur = (k: keyof typeof SCENE_TIMING) => sec(SCENE_TIMING[k].to) - sec(SCENE_TIMING[k].from);
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      {/* Static asset render: table illustration -> public/assets/table.png */}
+      <Composition
+        id="Asset-Table"
+        component={TableAsset}
+        durationInFrames={1}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
+      />
+
       {/* HERO (full-screen, all-out editorial) — attention cutaway versions */}
       <Composition
         id="Hero01-Title"
         component={Scene01_TitleHero}
         durationInFrames={FPS * 6}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
+      />
+      <Composition
+        id="Hero05-CommitteeTablePhoto"
+        component={Scene05_CommitteeTablePhoto}
+        durationInFrames={FPS * 7}
         fps={FPS}
         width={WIDTH}
         height={HEIGHT}
