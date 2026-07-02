@@ -1,0 +1,11 @@
+{
+  "_comment": "Fill each url with the fresh signed 'url' field from Magnific creations_get (they are on pikaso.cdnpk.net and expire, so paste them in the retry session right before running the pull script). dest is relative to the project root.",
+  "assets": [
+    { "name": "boardroom",  "identifier": "LUHhAgeswO", "dest": "public/assets/boardroom.png", "url": "" },
+    { "name": "cutout-1",   "identifier": "",           "dest": "public/assets/cutout-1.png", "url": "" },
+    { "name": "cutout-2",   "identifier": "",           "dest": "public/assets/cutout-2.png", "url": "" },
+    { "name": "cutout-3",   "identifier": "",           "dest": "public/assets/cutout-3.png", "url": "" },
+    { "name": "cutout-4",   "identifier": "",           "dest": "public/assets/cutout-4.png", "url": "" },
+    { "name": "cutout-5",   "identifier": "",           "dest": "public/assets/cutout-5.png", "url": "" }
+  ]
+}

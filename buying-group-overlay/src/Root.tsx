@@ -24,6 +24,11 @@ import { Scene01_TitleHero } from "./scenes/hero/Scene01_TitleHero";
 import { Scene05_CommitteeTableHero } from "./scenes/hero/Scene05_CommitteeTableHero";
 import { TableAsset } from "./assets/TableAsset";
 import { Scene05_CommitteeTablePhoto } from "./scenes/hero/Scene05_CommitteeTablePhoto";
+import {
+  Scene05_CommitteeBoardroom,
+  committeeBoardroomSchema,
+  committeeBoardroomDefaults,
+} from "./scenes/hero/Scene05_CommitteeBoardroom";
 
 const dur = (k: keyof typeof SCENE_TIMING) => sec(SCENE_TIMING[k].to) - sec(SCENE_TIMING[k].from);
 
@@ -38,6 +43,19 @@ export const RemotionRoot: React.FC = () => {
         fps={FPS}
         width={WIDTH}
         height={HEIGHT}
+      />
+
+      {/* HERO — committee seated in the Magnific boardroom render + 5 cutouts.
+          Tune each seat live in the right-hand props panel. */}
+      <Composition
+        id="Hero05-CommitteeBoardroom"
+        component={Scene05_CommitteeBoardroom}
+        durationInFrames={FPS * 7}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
+        schema={committeeBoardroomSchema}
+        defaultProps={committeeBoardroomDefaults}
       />
 
       {/* HERO (full-screen, all-out editorial) — attention cutaway versions */}
