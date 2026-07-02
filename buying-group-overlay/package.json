@@ -16,6 +16,7 @@
     "render:scene05": "remotion render src/index.ts Scene05-Committee out/scene05-committee.mov --codec=prores --prores-profile=4444",
     "render:scene06": "remotion render src/index.ts Scene06-Validation out/scene06-validation.mov --codec=prores --prores-profile=4444",
     "render:all-scenes": "npm run render:scene01 && npm run render:scene02 && npm run render:scene03 && npm run render:scene04 && npm run render:scene05 && npm run render:scene06",
+    "render:webm": "remotion render src/index.ts Scene01-Title clips/1-title.webm --codec=vp9 --pixel-format=yuva420p --crf=18 && remotion render src/index.ts Scene02-CustomerIntel clips/2-customer-intel.webm --codec=vp9 --pixel-format=yuva420p --crf=18 && remotion render src/index.ts Scene03-PowerUsers clips/3-power-users-champions.webm --codec=vp9 --pixel-format=yuva420p --crf=18 && remotion render src/index.ts Scene04-Departments clips/4-department-use-cases.webm --codec=vp9 --pixel-format=yuva420p --crf=18 && remotion render src/index.ts Scene05-Committee clips/5-buying-committee.webm --codec=vp9 --pixel-format=yuva420p --crf=18 && remotion render src/index.ts Scene06-Validation clips/6-validation.webm --codec=vp9 --pixel-format=yuva420p --crf=18",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
