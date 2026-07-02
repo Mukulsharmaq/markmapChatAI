@@ -19,12 +19,22 @@ import { Scene03_PowerUsers, scene03Schema, scene03Defaults } from "./scenes/Sce
 import { Scene04_Departments, scene04Schema, scene04Defaults } from "./scenes/Scene04_Departments";
 import { Scene05_Committee, scene05Schema, scene05Defaults } from "./scenes/Scene05_Committee";
 import { Scene06_Validation, scene06Schema, scene06Defaults } from "./scenes/Scene06_Validation";
+import { Scene05_CommitteeHero } from "./scenes/hero/Scene05_CommitteeHero";
 
 const dur = (k: keyof typeof SCENE_TIMING) => sec(SCENE_TIMING[k].to) - sec(SCENE_TIMING[k].from);
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      {/* HERO (full-screen, all-out editorial) — attention cutaway version */}
+      <Composition
+        id="Hero05-Committee"
+        component={Scene05_CommitteeHero}
+        durationInFrames={FPS * 6}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
+      />
       {/* Master timeline: all six scenes, sequenced + cross-faded */}
       <Composition
         id="BuyingGroupOverlay"
