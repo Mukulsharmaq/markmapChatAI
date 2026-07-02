@@ -20,13 +20,31 @@ import { Scene04_Departments, scene04Schema, scene04Defaults } from "./scenes/Sc
 import { Scene05_Committee, scene05Schema, scene05Defaults } from "./scenes/Scene05_Committee";
 import { Scene06_Validation, scene06Schema, scene06Defaults } from "./scenes/Scene06_Validation";
 import { Scene05_CommitteeHero } from "./scenes/hero/Scene05_CommitteeHero";
+import { Scene01_TitleHero } from "./scenes/hero/Scene01_TitleHero";
+import { Scene05_CommitteeTableHero } from "./scenes/hero/Scene05_CommitteeTableHero";
 
 const dur = (k: keyof typeof SCENE_TIMING) => sec(SCENE_TIMING[k].to) - sec(SCENE_TIMING[k].from);
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      {/* HERO (full-screen, all-out editorial) — attention cutaway version */}
+      {/* HERO (full-screen, all-out editorial) — attention cutaway versions */}
+      <Composition
+        id="Hero01-Title"
+        component={Scene01_TitleHero}
+        durationInFrames={FPS * 6}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
+      />
+      <Composition
+        id="Hero05-CommitteeTable"
+        component={Scene05_CommitteeTableHero}
+        durationInFrames={FPS * 7}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
+      />
       <Composition
         id="Hero05-Committee"
         component={Scene05_CommitteeHero}

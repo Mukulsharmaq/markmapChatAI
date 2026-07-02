@@ -32,11 +32,11 @@ export const Person: React.FC<{
           <path d="M18 120 Q18 76 60 76 Q102 76 102 120 Z" />
         </clipPath>
         <pattern id={`ht-${uid}`} width="7" height="7" patternUnits="userSpaceOnUse">
-          <circle cx="1.6" cy="1.6" r="1.5" fill="rgba(0,0,0,0.55)" />
+          <circle cx="1.6" cy="1.6" r="1.4" fill="rgba(90,70,10,0.35)" />
         </pattern>
         <linearGradient id={`fill-${uid}`} x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#f4f1e9" />
-          <stop offset="100%" stopColor="#cfc9bd" />
+          <stop offset="0%" stopColor="#fbf9f3" />
+          <stop offset="100%" stopColor="#e6e0d2" />
         </linearGradient>
       </defs>
 
@@ -50,9 +50,14 @@ export const Person: React.FC<{
 
       {/* Halftone shading clipped to the silhouette */}
       <g clipPath={`url(#sil-${uid})`}>
-        <rect x="0" y="0" width="120" height="124" fill={`url(#ht-${uid})`} opacity="0.5" />
+        <rect x="0" y="0" width="120" height="124" fill={`url(#ht-${uid})`} opacity="0.32" />
         {/* soft directional shadow */}
-        <rect x="60" y="0" width="60" height="124" fill="rgba(0,0,0,0.18)" />
+        <rect x="72" y="0" width="48" height="124" fill="rgba(60,45,10,0.12)" />
+      </g>
+      {/* crisp accent rim on the light silhouette */}
+      <g fill="none" stroke={accent} strokeOpacity="0.55" strokeWidth="1.5">
+        <circle cx="60" cy="40" r="21" />
+        <path d="M18 120 Q18 76 60 76 Q102 76 102 120" />
       </g>
 
       {/* Role accessory */}
