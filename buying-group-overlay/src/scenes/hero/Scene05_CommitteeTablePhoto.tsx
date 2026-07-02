@@ -5,7 +5,7 @@
  * top. This is the "create an image, then layer Remotion onto it" pipeline.
  */
 import React from "react";
-import { AbsoluteFill, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { AbsoluteFill, Easing, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { FONT_FAMILY } from "../../fonts";
 import { Backdrop } from "../../components/fx/Backdrop";
 import { Grain } from "../../components/fx/Grain";
@@ -13,15 +13,18 @@ import { Person } from "../../components/fx/Person";
 
 const ACCENT = "#F5C518";
 
+// Economic Buyer sits at the head/center (the ultimate sign-off), flanked by
+// the rest of the committee.
 const SEATS = [
-  { role: "poweruser", label: "Power User", x: 560 },
-  { role: "cdto", label: "CDTO", x: 840 },
-  { role: "cfo", label: "CFO", x: 1100 },
-  { role: "champion", label: "Champion", x: 1360 },
+  { role: "poweruser", label: "Power User", x: 540 },
+  { role: "champion", label: "Champion", x: 750 },
+  { role: "buyer", label: "Economic Buyer", x: 960 },
+  { role: "cdto", label: "CDTO", x: 1170 },
+  { role: "cfo", label: "CFO", x: 1380 },
 ] as const;
 
-const SETTLED_TOP = 430;
-const PERSON = 220;
+const SETTLED_TOP = 470;
+const PERSON = 188;
 
 const Seat: React.FC<{ seat: (typeof SEATS)[number]; appearAt: number }> = ({ seat, appearAt }) => {
   const frame = useCurrentFrame();
@@ -37,11 +40,11 @@ const Seat: React.FC<{ seat: (typeof SEATS)[number]; appearAt: number }> = ({ se
           left: "50%",
           top: 30,
           transform: "translateX(-50%)",
-          width: 156,
-          height: 160,
-          borderRadius: "30px 30px 14px 14px",
-          background: "linear-gradient(180deg, rgba(40,47,60,0.55), rgba(22,28,38,0.55))",
-          border: "1px solid rgba(255,255,255,0.10)",
+          width: 138,
+          height: 150,
+          borderRadius: "28px 28px 12px 12px",
+          background: "linear-gradient(180deg, rgba(40,47,60,0.5), rgba(22,28,38,0.5))",
+          border: "1px solid rgba(255,255,255,0.09)",
         }}
       />
       <Person role={seat.role} size={PERSON} accent={ACCENT} />
@@ -51,18 +54,26 @@ const Seat: React.FC<{ seat: (typeof SEATS)[number]; appearAt: number }> = ({ se
 
 export const Scene05_CommitteeTablePhoto: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const { fps, durationInFrames } = useVideoConfig();
 
   const kick = spring({ frame: frame - 4, fps, config: { damping: 18, stiffness: 120, mass: 0.8 } });
   const bar = interpolate(kick, [0, 1], [0, 56]);
 
-  const badgeAt = Math.round(fps * 3.2);
+  const badgeAt = Math.round(fps * 3.4);
   const badgeIn = spring({ frame: frame - badgeAt, fps, config: { damping: 12, stiffness: 170, mass: 0.8 } });
-  const count = Math.round(interpolate(frame, [badgeAt, badgeAt + fps], [0, 4], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
+  const count = Math.round(interpolate(frame, [badgeAt, badgeAt + fps], [0, 5], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }));
+
+  // Slow cinematic push-in toward the table.
+  const cam = interpolate(frame, [0, durationInFrames], [1.0, 1.075], {
+    extrapolateRight: "clamp",
+    easing: Easing.inOut(Easing.ease),
+  });
 
   return (
     <AbsoluteFill style={{ fontFamily: FONT_FAMILY }}>
       <Backdrop accent={ACCENT} />
+
+      <AbsoluteFill style={{ transform: `scale(${cam})`, transformOrigin: "960px 700px" }}>
 
       {/* Title */}
       <div style={{ position: "absolute", left: 120, top: 96, opacity: interpolate(kick, [0, 1], [0, 1]) }}>
@@ -91,11 +102,11 @@ export const Scene05_CommitteeTablePhoto: React.FC = () => {
           const at = Math.round(fps * (0.7 + i * 0.45)) + Math.round(fps * 0.5);
           const e = spring({ frame: frame - at, fps, config: { damping: 16, stiffness: 150 } });
           const op = interpolate(e, [0, 1], [0, 1]);
-          const w = 170;
+          const w = Math.max(148, s.label.length * 12.5 + 40);
           return (
             <g key={s.label} opacity={op} transform={`translate(${s.x}, 712) scale(${interpolate(e, [0, 1], [0.85, 1])})`}>
-              <rect x={-w / 2} y={-24} width={w} height={48} rx={8} fill="rgba(12,16,22,0.92)" stroke={ACCENT} strokeWidth="1.5" />
-              <text x={0} y={6} textAnchor="middle" fill={ACCENT} fontSize="24" fontWeight="800" fontFamily={FONT_FAMILY}>
+              <rect x={-w / 2} y={-23} width={w} height={46} rx={8} fill="rgba(12,16,22,0.92)" stroke={ACCENT} strokeWidth="1.5" />
+              <text x={0} y={6} textAnchor="middle" fill={ACCENT} fontSize="22" fontWeight="800" fontFamily={FONT_FAMILY}>
                 {s.label}
               </text>
             </g>
@@ -125,6 +136,8 @@ export const Scene05_CommitteeTablePhoto: React.FC = () => {
         <span style={{ color: ACCENT, fontSize: 38, fontWeight: 900, minWidth: 30, textAlign: "center" }}>{count}</span>
         <span style={{ color: "#fff", fontSize: 27, fontWeight: 700 }}>buying-committee members identified</span>
       </div>
+
+      </AbsoluteFill>
 
       <Grain opacity={0.12} />
     </AbsoluteFill>
