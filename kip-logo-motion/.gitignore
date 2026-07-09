@@ -1,0 +1,3 @@
+node_modules/
+.remotion/
+# Rendered deliverables in out/ ARE committed so they ship with the repo.
