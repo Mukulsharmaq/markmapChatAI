@@ -1,5 +1,10 @@
 # START HERE 👋 — your podcast overlay clips
 
+> **Looking for the trailer/teaser graphics + logo outro (Revenue Matters
+> brand system)?** They live in
+> [`revenue-matters-trailer/START-HERE.md`](revenue-matters-trailer/START-HERE.md).
+> This file covers the earlier buying-group-mapping clip overlays.
+
 You asked for **motion-graphic overlay videos** for your buying-group-mapping
 podcast clip. Here they are, plus exactly where each one goes.
 
