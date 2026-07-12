@@ -11,7 +11,7 @@ non-technical guide (which clip goes where, how to overlay).
 | `G1-TargetAccounts` | `clips/1-target-accounts.webm` | 7.5s | "100–125 target accounts" stat card, bottom-left |
 | `G2-500DollarPlay` | `clips/2-500-dollar-play.webm` | 8s | Jobs-to-be-done + category-entry-point pills → $500 test-budget stat, bottom-right |
 | `G3-StoryQuote` | `clips/3-story-quote.webm` | 6.5s | Closing quote card with gold hot phrase + attribution |
-| `Outro-Logo` | `clips/4-logo-outro.webm` | 8s | Full-frame aurora-navy logo sting (opaque) |
+| `Outro-Logo` | `clips/4-logo-outro.webm` | 6.5s | "Signal found" logo sting: gold signal line diverges from the noise line, strikes the target, logo wipes in from its own bullseye (opaque) |
 | `Preview-*` | `previews/*-PREVIEW.mp4` | — | Same scenes on a placeholder dark background |
 | `Preview-FullTrailer` | (studio only) | 52s | All four at their transcript-timed placements |
 

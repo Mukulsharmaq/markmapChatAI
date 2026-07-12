@@ -38,9 +38,13 @@ middle, and the story line is the emotional closer that hands off to the logo.
 Timing details:
 - Clip 2's **$500 counts up ~2.5s into the clip**, right as Raja says it —
   keep the clip start at 00:20.5 for the sync to land.
-- Clip 4 fades itself up from transparent over the first half-second, so it
-  blends smoothly over your final shot, holds the lockup, and ends on a stable
-  frame you can cut from. It's full-frame and opaque once faded in.
+- Clip 4 (6.5s) tells the brand story instead of just showing the logo: a
+  gold **signal line** draws itself out of a flat grey **noise line**, breaks
+  upward, **strikes the bullseye** (flash + shockwave), and the logo wipes in
+  from the exact point of its own target lock — then the tagline and
+  "A RECOTAP PODCAST" land, and it holds a stable frame you can cut from.
+  It fades up from transparent over the first ~0.4s and is full-frame opaque
+  after that.
 
 ## How to use them (CapCut / Premiere / DaVinci / FCP)
 
