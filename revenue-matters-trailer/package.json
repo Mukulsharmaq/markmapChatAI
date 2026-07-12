@@ -8,8 +8,8 @@
     "dev": "remotion studio",
     "studio": "remotion studio",
     "typecheck": "tsc --noEmit",
-    "render:webm": "remotion render src/index.ts G1-TargetAccounts clips/1-target-accounts.webm --codec=vp9 --pixel-format=yuva420p --crf=18 && remotion render src/index.ts G2-500DollarPlay clips/2-500-dollar-play.webm --codec=vp9 --pixel-format=yuva420p --crf=18 && remotion render src/index.ts G3-StoryQuote clips/3-story-quote.webm --codec=vp9 --pixel-format=yuva420p --crf=18 && remotion render src/index.ts Outro-Logo clips/4-logo-outro.webm --codec=vp9 --pixel-format=yuva420p --crf=18",
-    "render:previews": "remotion render src/index.ts Preview-G1 previews/1-target-accounts-PREVIEW.mp4 --codec=h264 && remotion render src/index.ts Preview-G2 previews/2-500-dollar-play-PREVIEW.mp4 --codec=h264 && remotion render src/index.ts Preview-G3 previews/3-story-quote-PREVIEW.mp4 --codec=h264 && remotion render src/index.ts Preview-Outro previews/4-logo-outro-PREVIEW.mp4 --codec=h264",
+    "render:webm": "remotion render src/index.ts G1-TargetAccounts clips/1-target-accounts.webm --codec=vp9 --pixel-format=yuva420p --crf=18 --timeout=120000 && remotion render src/index.ts G2-500DollarPlay clips/2-500-dollar-play.webm --codec=vp9 --pixel-format=yuva420p --crf=18 --timeout=120000 && remotion render src/index.ts G3-StoryQuote clips/3-story-quote.webm --codec=vp9 --pixel-format=yuva420p --crf=18 --timeout=120000 && remotion render src/index.ts Outro-Logo clips/4-logo-outro.webm --codec=vp9 --pixel-format=yuva420p --crf=18 --timeout=120000",
+    "render:previews": "remotion render src/index.ts Preview-G1 previews/1-target-accounts-PREVIEW.mp4 --codec=h264 --timeout=120000 && remotion render src/index.ts Preview-G2 previews/2-500-dollar-play-PREVIEW.mp4 --codec=h264 --timeout=120000 && remotion render src/index.ts Preview-G3 previews/3-story-quote-PREVIEW.mp4 --codec=h264 --timeout=120000 && remotion render src/index.ts Preview-Outro previews/4-logo-outro-PREVIEW.mp4 --codec=h264 --timeout=120000",
     "render:all": "npm run render:webm && npm run render:previews"
   },
   "dependencies": {
