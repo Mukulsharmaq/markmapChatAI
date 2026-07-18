@@ -1,0 +1,64 @@
+{
+  "name": "test from claude",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "0f7b9c2e-1a3d-4e5f-8a6b-7c8d9e0f1a2b",
+      "name": "When clicking 'Execute workflow'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+              "name": "message",
+              "value": "Hello! This is a test workflow created by Claude.",
+              "type": "string"
+            },
+            {
+              "id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+              "name": "createdBy",
+              "value": "Claude",
+              "type": "string"
+            },
+            {
+              "id": "2b3c4d5e-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+              "name": "status",
+              "value": "ok",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+      "name": "Set Test Message",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [220, 0]
+    }
+  ],
+  "connections": {
+    "When clicking 'Execute workflow'": {
+      "main": [
+        [
+          {
+            "node": "Set Test Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "tags": []
+}
