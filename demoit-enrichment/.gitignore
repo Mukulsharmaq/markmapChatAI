@@ -1,0 +1,9 @@
+# Never commit secrets or exported lead data
+__pycache__/
+*.pyc
+.orkey
+*.key
+input_rows.json
+results.jsonl
+updates.sql
+*.local
