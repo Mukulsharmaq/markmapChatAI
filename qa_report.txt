@@ -1,0 +1,40 @@
+
+===========================================================================
+LEAD GATING QA REPORT
+===========================================================================
+
+Input file: leads_raw.csv
+Output file: send_ready.csv
+
+Total input rows:                        26
+Send-ready rows:                         11
+
+Exclusion Breakdown:                    
+---------------------------------------------------------------------------
+  Company domain suppressed (norvind.com)                2
+  Company domain suppressed (ridgeline3pl.com)           1
+  Duplicate (same person by LinkedIn/email/name+company)     1
+  Email/domain mismatch (keeleylogistics.com ≠ sundstrand-dist.com)     1
+  Employee count outside 250-10,000 range (4)            1
+  Employee count outside 250-10,000 range (41000)        1
+  Generic inbox (no person name)                         2
+  No email                                               1
+  Personal email domain                                  1
+  Title not ICP buyer persona (COO)                      1
+  Title not ICP buyer persona (Head of Fulfilment)       1
+  Title not ICP buyer persona (VP Supply Chain)          2
+---------------------------------------------------------------------------
+  Total excluded:                                       15
+
+Reconciliation:                         
+  Send-ready (11) + Excluded (15) = 26
+  Expected total: 26
+  ✓ RECONCILIATION OK
+
+===========================================================================
+VALIDATION NOTES
+===========================================================================
+✓ Geography (North America): NOT VALIDATED
+  Reason: No geographic/country field in input data
+===========================================================================
+
