@@ -1,25 +1,14 @@
 # Scale, Cost & Skill Analysis
 
-## Placeholder
+**PLACEHOLDER**
 
-This document should contain:
+This document should contain analysis from your GTM planning work. It covers:
 
-1. **Scaling Analysis**
-   - What does actual scaling look like? (contacts, domains, volumes)
-   - Which segments scale, which don't?
-   - What infrastructure changes are needed?
-
-2. **Cost Modeling**
-   - Per-contact cost (data + enrichment + sending)
-   - Cost per reply
-   - Cost per meeting
-   - Break-even point
-
-3. **Skill Requirements**
-   - What does the team need to execute?
-   - Where are the gaps?
-   - Training, hiring, or outsourcing?
+- **Scaling analysis:** Volume projections, segment viability, infrastructure needs
+- **Cost modeling:** Per-contact cost, per-reply cost, per-meeting cost, break-even analysis
+- **Skill assessment:** What the team needs to execute, training/hiring/outsourcing decisions
+- **Timeline & roadmap:** How to sequence the work
 
 ---
 
-*This document was not generated in the current work session. Please fill in from Verrick's financial model, headcount plan, and scaling roadmap.*
+*Please insert the final scale/cost/skill analysis from your financial and operational planning.*
